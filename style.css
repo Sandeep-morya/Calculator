@@ -13,7 +13,6 @@ body {
 }
 .history > img {
   width: 50%;
-  filter: brightness(100);
 }
 .theme {
   overflow: hidden;
