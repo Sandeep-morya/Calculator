@@ -36,24 +36,27 @@ document.querySelector(".allclear").addEventListener("click",e=>{//AC
 });
 document.querySelector(".add").addEventListener("click",e=>{//+
     let bag=modify(results.innerText);
-    results.innerText=eval(bag)+"+";
+    results.innerText=myeval(bag)+"+";
 });
  document.querySelector(".subtract").addEventListener("click",e=>{//-
     let bag=modify(results.innerText);
-    results.innerText=eval(bag)+"-";
+    results.innerText=myeval(bag)+"-";
 });
 document.querySelector(".multiply").addEventListener("click",e=>{//x
     let bag=modify(results.innerText);
-    results.innerText=eval(bag)+"*";
+    results.innerText=myeval(bag)+"x";
 });
 document.querySelector(".divide").addEventListener("click",e=>{///
     let bag=modify(results.innerText);
-    results.innerText=eval(bag)+"/";
+    results.innerText=myeval(bag)+"÷";
 });
-document.querySelector(".negative").addEventListener("click",e=>{///
-    let last=results.innerText[results.innerText.length-1]
-    let bag=modify(results.innerText);
-    results.innerText=bag*-1+last;
+document.querySelector(".negative").addEventListener("click",e=>{///-
+    let bag=results.innerText;
+    if(results.innerText[0]=="-"){
+        results.innerText=bag.substring(1,bag.length);
+    }else{
+        results.innerText="-"+bag;
+    }
 });
 document.querySelector(".root").addEventListener("click",e=>{///
     results.innerText=(+results.innerText)**0.5
@@ -83,11 +86,11 @@ document.querySelector(".percent").addEventListener("click",e=>{//%
         let arr=bag.split("-");
         let val=((+arr[0])*(+arr[1]))/100;
         results.innerText=(+arr[0])-val;
-    }else if(bag.includes("*")){
-        let arr=bag.split("*");
+    }else if(bag.includes("x")){
+        let arr=bag.split("x");
         results.innerText=(+arr[0]*(+arr[1]))/100;
-    }else if(bag.includes("/")){
-        let arr=bag.split("/");
+    }else if(bag.includes("÷")){
+        let arr=bag.split("÷");
         results.innerText=(+arr[0]/(+arr[1]))/100;
     }
     else{
@@ -116,4 +119,24 @@ function special_per(x){
     let val=+arr[0]/100;
     ans=+arr[1]*val
     return ans;
+ }
+
+ function myeval(str){
+    if(str.includes("+")){
+        str=str.split("+").map(Number)
+            return str[0]+str[1];
+    }
+    if(str.includes("-")){
+        str=str.split("-").map(Number)
+            return str[0]-str[1];
+    }
+    if(str.includes("x")){
+        str=str.split("x").map(Number)
+            return str[0]*str[1];
+    }
+    if(str.includes("÷")){
+        str=str.split("÷").map(Number)
+            return str[0]/str[1];
+    }
+    return str;
  }
