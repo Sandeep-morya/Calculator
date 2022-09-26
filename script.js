@@ -11,6 +11,7 @@ function randomColor(){
 }
 
 function mixed(e){
+    document.querySelector("body").style.filter="none";
     let random_color=randomColor();
     keys.forEach(i=>i.style.backgroundColor= random_color);
     digits.forEach(run);
@@ -40,7 +41,7 @@ document.querySelector(".add").addEventListener("click",e=>{//+
 });
  document.querySelector(".subtract").addEventListener("click",e=>{//-
     let bag=modify(results.innerText);
-    results.innerText=myeval(bag)+"-";
+    results.innerText=myeval(bag)+"–";
 });
 document.querySelector(".multiply").addEventListener("click",e=>{//x
     let bag=modify(results.innerText);
@@ -82,8 +83,8 @@ document.querySelector(".percent").addEventListener("click",e=>{//%
         let arr=bag.split("+");
         let val=((+arr[0])*(+arr[1]))/100;
         results.innerText=(+arr[0])+val;
-    }else if(bag.includes("-")){
-        let arr=bag.split("-");
+    }else if(bag.includes("–")){
+        let arr=bag.split("–");
         let val=((+arr[0])*(+arr[1]))/100;
         results.innerText=(+arr[0])-val;
     }else if(bag.includes("x")){
@@ -102,9 +103,12 @@ document.querySelector(".equal").addEventListener("click",e=>{//=
     if(results.innerText.includes("%")){
         results.innerText=special_per(results.innerText);
     }
-    results.innerText=eval(results.innerText)
+    results.innerText=myeval(results.innerText)
 });
 
+document.querySelector(".history").addEventListener("click",e=>{
+    document.querySelector("body").style.filter="invert()";
+});
 function modify(x){
     let n=x.length-1;
     if(x[n]=="+"||x[n]=="-"||x[n]=="*"||x[n]=="/"||x[n]=="%"){
@@ -125,18 +129,18 @@ function special_per(x){
     if(str.includes("+")){
         str=str.split("+").map(Number)
             return str[0]+str[1];
-    }
-    if(str.includes("-")){
-        str=str.split("-").map(Number)
+    }else
+    if(str.includes("–")){
+        str=str.split("–").map(Number)
             return str[0]-str[1];
-    }
+    }else
     if(str.includes("x")){
         str=str.split("x").map(Number)
             return str[0]*str[1];
-    }
+    }else
     if(str.includes("÷")){
         str=str.split("÷").map(Number)
             return str[0]/str[1];
-    }
+    }else
     return str;
  }
