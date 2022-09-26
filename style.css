@@ -2,6 +2,7 @@
 
 body {
   font-family: "Maven Pro", sans-serif;
+  display: flex;
 }
 #container {
   width: 35%;
@@ -16,6 +17,9 @@ body {
 }
 .theme {
   overflow: hidden;
+}
+.history{
+  visibility: hidden;
 }
 .results {
   width: 75%;

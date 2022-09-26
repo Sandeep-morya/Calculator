@@ -2,6 +2,7 @@ document.querySelector(".theme").addEventListener("click",mixed);
 let keys=document.querySelectorAll(".bgclr");
 let digits=document.querySelectorAll(".num");
 let results=document.querySelector(".results");
+let history=document.querySelector(".history")
 function randomColor(){
     let x=Math.floor(Math.random()*256);
     let y=Math.floor(Math.random()*256);
@@ -25,6 +26,9 @@ function mixed(e){
         document.querySelector("body").style.backgroundImage="linear-gradient(90deg,"+random_color+",white,white,white,white,"+random_color+")";
     } 
 }
+results.addEventListener("dblclick",e=>{
+    history.style.visibility="visible";
+})
 digits.forEach(e=>e.addEventListener("click",putValue));
 function putValue(key){
     if(results.innerText==="0"){
@@ -106,7 +110,7 @@ document.querySelector(".equal").addEventListener("click",e=>{//=
     results.innerText=myeval(results.innerText)
 });
 
-document.querySelector(".history").addEventListener("click",e=>{
+document.querySelector(".fil").addEventListener("click",e=>{
     document.querySelector("body").style.filter="invert()";
 });
 function modify(x){
@@ -124,8 +128,8 @@ function special_per(x){
     ans=+arr[1]*val
     return ans;
  }
-
  function myeval(str){
+    history.innerText=results.innerText;
     if(str.includes("+")){
         str=str.split("+").map(Number)
             return str[0]+str[1];
