@@ -20,13 +20,13 @@ body {
 }
 .results {
   width: 75%;
-  height: 100px;
+  height: 120px;
   margin: auto;
   color: grey;
   display: flex;
   justify-content: end;
   align-items: center;
-  font-size: 70px;
+  font-size: 90px;
   user-select: none;
   border-bottom: 3px solid black;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -41,7 +41,7 @@ body {
   gap: 10px;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 90px);
+  grid-template-rows: repeat(2, 115px);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -50,14 +50,14 @@ body {
   text-align: center;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 90px);
+  grid-template-rows: repeat(4, 115px);
 }
 .btns > .bottom div,
 .btns > .top div {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 40px;
   border-radius: 5em;
   user-select: none;
 }
@@ -98,6 +98,10 @@ body {
     gap: 10px;
     grid-template-rows: repeat(4, 75px);
   }
+  .btns > .bottom div,
+  .btns > .top div {
+    font-size: 30px;
+  }
 }
 /* Mid Screen */
 @media only screen and (min-width: 640px) and (max-width: 959px) {
@@ -124,6 +128,10 @@ body {
   .btns > .bottom {
     gap: 5px;
     grid-template-rows: repeat(4, 100px);
+  }
+  .btns > .bottom div,
+  .btns > .top div {
+    font-size: 30px;
   }
 }
 
@@ -153,5 +161,9 @@ body {
   .btns > .bottom {
     gap: 5px;
     grid-template-rows: repeat(4, 78px);
+  }
+  .btns > .bottom div,
+  .btns > .top div {
+    font-size: 30px;
   }
 }
