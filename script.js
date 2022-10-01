@@ -16,11 +16,24 @@ function mixed(e){
     count=false;
     document.querySelector("body").style.filter="none";
     let random_color=randomColor();
-    keys.forEach(i=>i.style.backgroundColor= random_color);
+    keys.forEach(i=>{
+        i.style.backgroundColor= random_color;
+        // i.addEventListener("mouseover",z=>{
+
+        // })
+    });
     digits.forEach(run);
     function run(i){
-        i.style.borderColor= random_color;
         i.style.color=random_color;
+        i.addEventListener("mouseover",z=>{
+            i.style.backgroundColor=random_color;
+            i.style.color="white";
+            i.style.transition="ease-in 0.2s"
+        })
+        i.addEventListener("mouseout",z=>{
+            i.style.backgroundColor="white";
+            i.style.color=random_color;
+        })
     }
     results.style.borderColor= random_color;
     results.style.color= random_color;
@@ -122,7 +135,7 @@ document.querySelector(".fil").addEventListener("click",e=>{
             results.innerText="Sandeep";
         }
         if(results.innerText=="2"){
-            results.innerText="💋💋💋";
+            results.innerText="💋💋";
         }
         if(results.innerText=="3"){
            location.href="https://calculator.com";
@@ -131,7 +144,7 @@ document.querySelector(".fil").addEventListener("click",e=>{
             location.href="https://google.com";
         }
         if(results.innerText=="5"){
-            location.href="https://calcyaplha.netlify.app";
+            location.href="https://calcyalpha.netlify.app";
         }
         if(results.innerText=="6"){
             location.href="https://sparkamerica.netlify.app"

@@ -4,6 +4,7 @@ body {
   font-family: "Maven Pro", sans-serif;
   display: flex;
 }
+
 #container {
   width: 35%;
   margin: auto;
@@ -68,6 +69,7 @@ body {
   grid-column: span 2;
 }
 .num {
+  cursor: pointer;
   background-color: white;
   box-shadow: black 0px 3px 8px;
 }
