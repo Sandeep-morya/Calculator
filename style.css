@@ -8,12 +8,12 @@ body {
   width: 35%;
   margin: auto;
 }
-.theme > img {
-  width: 70%;
-  margin-top: 10px;
+.fil>svg{
+  width: 60%;
+  filter: invert();
 }
-.history > img {
-  width: 50%;
+.clear>svg,.allclear>svg,.theme >svg{
+  width: 60%;
 }
 .theme {
   overflow: hidden;

@@ -2,7 +2,8 @@ document.querySelector(".theme").addEventListener("click",mixed);
 let keys=document.querySelectorAll(".bgclr");
 let digits=document.querySelectorAll(".num");
 let results=document.querySelector(".results");
-let history=document.querySelector(".history")
+let history=document.querySelector(".history");
+let count=false;
 function randomColor(){
     let x=Math.floor(Math.random()*256);
     let y=Math.floor(Math.random()*256);
@@ -12,6 +13,7 @@ function randomColor(){
 }
 
 function mixed(e){
+    count=false;
     document.querySelector("body").style.filter="none";
     let random_color=randomColor();
     keys.forEach(i=>i.style.backgroundColor= random_color);
@@ -111,7 +113,39 @@ document.querySelector(".equal").addEventListener("click",e=>{//=
 });
 
 document.querySelector(".fil").addEventListener("click",e=>{
-    document.querySelector("body").style.filter="invert()";
+    count=true;
+    if(count){
+        if(results.innerText=="0"){
+            results.innerText="HELLO !";
+        }
+        if(results.innerText=="1"){
+            results.innerText="Sandeep";
+        }
+        if(results.innerText=="2"){
+            results.innerText="💋💋💋";
+        }
+        if(results.innerText=="3"){
+           location.href="https://calculator.com";
+        }
+        if(results.innerText=="4"){
+            location.href="https://google.com";
+        }
+        if(results.innerText=="5"){
+            location.href="https://calcyaplha.netlify.app";
+        }
+        if(results.innerText=="6"){
+            location.href="https://sparkamerica.netlify.app"
+        }
+        if(results.innerText=="7"){
+            results.innerText="I💘U";
+        }
+        if(results.innerText=="8"){
+            results.innerText="Need 🔑"
+        }
+        if(results.innerText=="9"){
+            results.innerText="Bye Bye !"
+        }
+    }
 });
 function modify(x){
     let n=x.length-1;
