@@ -41,9 +41,7 @@ function mixed(e){
         document.querySelector("body").style.backgroundImage="linear-gradient(90deg,"+random_color+",white,white,white,white,"+random_color+")";
     } 
 }
-results.addEventListener("dblclick",e=>{
-    history.style.visibility="visible";
-})
+
 digits.forEach(e=>e.addEventListener("click",putValue));
 function putValue(key){
     if(results.innerText==="0"){
