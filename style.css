@@ -30,12 +30,13 @@ body {
   display: flex;
   justify-content: end;
   align-items: center;
-  font-size: 90px;
+  font-size: 60px;
   user-select: none;
   border-bottom: 3px solid black;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  overflow: hidden;
+
 }
+svg{height: 60px !important; aspect-ratio: 1;}
 .btns {
   width: 75%;
   margin: auto;
@@ -44,28 +45,34 @@ body {
   display: grid;
   gap: 10px;
   text-align: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 115px);
-  margin-top: 10px;
-  margin-bottom: 10px;
+  grid-template-columns: repeat(4,1fr);
+  margin: 10px 0;
 }
 .btns > .bottom {
   display: grid;
   text-align: center;
   gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 115px);
+  grid-template-columns: repeat(4,1fr);
+  
 }
 .btns > .bottom div,
 .btns > .top div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  border-radius: 5em;
   user-select: none;
+  width: 75px;
+  aspect-ratio: 1;
+  font-size: 30px;
+  border-radius: 5rem;
+  display: grid;
+  place-items: center;
+}
+.btns > .bottom div:active,
+.btns > .top div:active {
+  width: 73px;
+  aspect-ratio: 1;
 }
 .equal {
+  width: 100% !important;
+  height: 75px !important;
   grid-column: span 2;
 }
 .num {
@@ -77,71 +84,9 @@ body {
   background-color: black;
   color: white;
 }
-/* Mid Screen */
-@media only screen and (min-width: 960px) and (max-width: 1366px) {
-  #container {
-    width: 25%;
-    margin: auto;
-  }
-  .results {
-    width: 85%;
-    height: 100px;
-    font-size: 70px;
-    padding: 0 20px;
-  }
-  .btns {
-    width: 100%;
-    margin: auto;
-  }
-  .btns > .top {
-    gap: 10px;
-    grid-template-rows: repeat(2, 75px);
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  .btns > .bottom {
-    gap: 10px;
-    grid-template-rows: repeat(4, 75px);
-  }
-  .btns > .bottom div,
-  .btns > .top div {
-    font-size: 30px;
-  }
-}
-/* Mid Screen */
-@media only screen and (min-width: 640px) and (max-width: 959px) {
-  #container {
-    width: 45%;
-    margin: auto;
-  }
-  .results {
-    width: 85%;
-    height: 100px;
-    font-size: 70px;
-    padding: 0 20px;
-  }
-  .btns {
-    width: 100%;
-    margin: auto;
-  }
-  .btns > .top {
-    gap: 5px;
-    grid-template-rows: repeat(2, 100px);
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  .btns > .bottom {
-    gap: 5px;
-    grid-template-rows: repeat(4, 100px);
-  }
-  .btns > .bottom div,
-  .btns > .top div {
-    font-size: 30px;
-  }
-}
 
 /* Small Screen */
-@media only screen and (min-width: 240px) and (max-width: 639px) {
+@media only screen and (max-width: 600px) {
   #container {
     width: 95%;
     padding: 10px;
